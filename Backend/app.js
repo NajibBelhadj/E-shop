@@ -20,6 +20,7 @@ const api = process.env.API_URL;
 //Middleware
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
+app.use('/public/uploads', express.static(__dirname + '/public/uploads'))
 app.use(authJwt());
 app.use(errorHandler);
 
