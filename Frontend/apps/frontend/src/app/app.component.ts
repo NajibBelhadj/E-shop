@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'Frontend-root',
+  selector: 'ngshop-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

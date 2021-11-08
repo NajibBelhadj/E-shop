@@ -21,6 +21,7 @@
         ]
       }
     },
+    
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
@@ -31,5 +32,7 @@
       "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
     }
-  ]
+  ],
+  "no-empty-function": "off",
+  "@typescript-eslint/no-empty-function": "off"
 }

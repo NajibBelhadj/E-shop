@@ -13,9 +13,7 @@
   margin-left: 9px;
 }
 
-.col-span-2 {
-  grid-column: span 2;
-}
+
 
 .flex {
   display: flex;
@@ -54,9 +52,7 @@ h2 {
   text-align: center;
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-gap: 9px;
-  grid-template-columns: 1fr 1fr;
+
 }
 
 .resource {
