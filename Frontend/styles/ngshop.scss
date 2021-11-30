@@ -3,6 +3,7 @@
 @import "./base/mixins.scss";
 @import "./base/configuration.scss";
 
+@import '~bootstrap/scss/bootstrap.scss';
 //Pages
 @import './apps/shop/pages/home-page.scss';
 @import './apps/shop/pages/products-list-page.scss';
