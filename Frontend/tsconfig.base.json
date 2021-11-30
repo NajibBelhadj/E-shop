@@ -15,7 +15,10 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@Frontend/ui": ["libs/ui/src/index.ts"]
+            "@Frontend/orders": ["libs/orders/src/index.ts"],
+            "@Frontend/products": ["libs/products/src/index.ts"],
+            "@Frontend/ui": ["libs/ui/src/index.ts"],
+            "@Frontend/users": ["libs/users/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
