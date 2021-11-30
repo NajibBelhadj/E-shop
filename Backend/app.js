@@ -12,7 +12,6 @@ require('dotenv/config');
 app.use(cors());
 app.options('*', cors());
 
-
 const api = process.env.API_URL;
 
 
