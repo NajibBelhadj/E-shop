@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -12,6 +13,7 @@ import {CardModule} from 'primeng/card';
 import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { CategoriesService } from '@Frontend/products';
 
 const UX_MODULE = [
     CardModule,
@@ -40,11 +42,12 @@ const routes: Routes = [
     declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent],
     imports: [
         BrowserModule,
+        HttpClientModule,
         RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
         ...UX_MODULE
     ],
         
-    providers: [],
+    providers: [CategoriesService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
