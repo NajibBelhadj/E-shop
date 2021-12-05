@@ -16,6 +16,7 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const UX_MODULE = [
@@ -51,6 +52,8 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(routes, {initialNavigation: 'enabled'}),
         ...UX_MODULE
     ],

@@ -5,7 +5,7 @@
                 <p-toolbar>
                     <div class="p-toolbar-group-left"></div>
                     <div class="p-toolbar-group-right">
-                        <p-button styleClass="p-button-primary p-mr-2" label="Create" icon="pi pi-plus"></p-button>
+                        <p-button styleClass="p-button-primary p-mr-2" label="Create" icon="pi pi-plus" (click)="onSubmit()"></p-button>
                         <p-button styleClass="p-button-secondary" label="Cancel" icon="pi pi-arrow-circle-left" routerLink="/categories"></p-button>
                     </div>
                 </p-toolbar>
@@ -13,15 +13,17 @@
         </div>
         <div class="p-grid">
             <div class="p-col-12">
-                <form>
+                <form [formGroup]="form">
                     <div class="p-fluid p-formgrid p-grid">
                         <div class="p-field p-col">
                             <label for="name">Name</label>
-                            <input id="name" type="text" pInputText placeholder="Name" />
+                            <input formControlName="name" id="name" type="text" pInputText placeholder="Name" />
+                            <small *ngIf="categoryForm.name.invalid && isSubmitted" class="p-error">Name is required</small>
                         </div>
                         <div class="p-field p-col">
                             <label for="icon">Icon</label>
-                            <input id="icon" type="text" pInputText placeholder="Icon" />
+                            <input formControlName="icon" id="icon" type="text" pInputText placeholder="Icon" />
+                            <small *ngIf="categoryForm.icon.invalid && isSubmitted" class="p-error">Icon is required</small>
                         </div>
                     </div>
                 </form>
