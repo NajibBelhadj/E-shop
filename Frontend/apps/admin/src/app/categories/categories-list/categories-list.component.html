@@ -27,7 +27,7 @@
                             <td>{{ categories.name }}</td>
                             <td>{{ categories.icon }}</td>
                             <td>
-                                <p-button styleClass="p-button-error p-mr-2" icon="pi pi-pencil"></p-button>
+                                <p-button (click)="updateCategory(categories.id)" styleClass="p-button-error p-mr-2" icon="pi pi-pencil"></p-button>
                                 <p-button (click)="deleteCategory(categories.id)" styleClass="p-button-danger" icon="pi pi-trash"></p-button>
                             </td>
                         </tr>
