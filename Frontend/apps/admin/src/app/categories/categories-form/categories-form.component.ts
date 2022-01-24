@@ -30,12 +30,15 @@ export class CategoriesFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       icon: ['',Validators.required],
       name: ['',Validators.required],
+      color: ['#fff']
     })
 
    }
 
   ngOnInit(): void {
+   
     this._checkEditMode();
+    console.log(this.editmod)
   }
   onSubmit(){
     this.isSubmitted=true;
@@ -45,7 +48,8 @@ export class CategoriesFormComponent implements OnInit {
     const category : Category ={
       id: this.currentCategoryID,
       name: this.categoryForm.name.value,
-      icon: this.categoryForm.icon.value
+      icon: this.categoryForm.icon.value,
+      color: this.categoryForm.color.value
     }
 
     if(this.editmod){
@@ -107,6 +111,7 @@ export class CategoriesFormComponent implements OnInit {
         this.categoriesService.getCategorie(params.id).subscribe(category =>{
           this.categoryForm.name.setValue(category.name);
           this.categoryForm.icon.setValue(category.icon);
+          this.categoryForm.color.setValue(category.color);
         })
       }
     })
