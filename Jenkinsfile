@@ -1,17 +1,14 @@
-//pre-defined structure
 CODE_CHANGES == getGitChanges()
-pipeline{		//must bee top-level	
-	agent any	//where to execute
-	stages {	//where the "work" happens
-		stage("build") {		//stage and stape
+pipeline{
+	agent any
+	stages {
+		stage("build") {
 			when{
 				expression {
 					BRANCH_NAME == 'dev' && CODE_CHANGES == true
 				}
 			}	
 			steps{
-				sh 'npm install'	//for js
-				sh 'npm build'	//for js
 				echo 'building the application...'
 			}
 		}
@@ -31,15 +28,12 @@ pipeline{		//must bee top-level
 			}
 		}
 	}
-	post { 			//Execute some logic After all stages executed build statut
+	post {
 		always {
-			//err or success
 		}
 		success {
-			// on the success
 		}
 		failure {
-			// failure
 		}
 	}
 }
